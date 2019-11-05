@@ -1,0 +1,15 @@
+13.01.2018 14:39:29.373 *ERROR* [FelixStartLevel] ERROR: Bundle '605' Error starting jcrinstall:/apps/selfridges/install/selfridges-app-activator-1.2.0-SNAPSHOT.jar (org.osgi.framework.BundleException: Unable to resolve selfridges-app-activator [605](R 605.0): missing requirement [selfridges-app-activator [605](R 605.0)] osgi.wiring.package; (&(osgi.wiring.package=com.cognifide.selfridges.core.modules)(version>=1.2.0.SNAPSHOT)) [caused by: Unable to resolve selfridges-app-core [606](R 606.0): missing requirement [selfridges-app-core [606](R 606.0)] osgi.wiring.package; (osgi.wiring.package=com.mashape.unirest.http)] Unresolved requirements: [[selfridges-app-activator [605](R 605.0)] osgi.wiring.package; (&(osgi.wiring.package=com.cognifide.selfridges.core.modules)(version>=1.2.0.SNAPSHOT))])
+org.osgi.framework.BundleException: Unable to resolve selfridges-app-activator [605](R 605.0): missing requirement [selfridges-app-activator [605](R 605.0)] osgi.wiring.package; (&(osgi.wiring.package=com.cognifide.selfridges.core.modules)(version>=1.2.0.SNAPSHOT)) [caused by: Unable to resolve selfridges-app-core [606](R 606.0): missing requirement [selfridges-app-core [606](R 606.0)] osgi.wiring.package; (osgi.wiring.package=com.mashape.unirest.http)] Unresolved requirements: [[selfridges-app-activator [605](R 605.0)] osgi.wiring.package; (&(osgi.wiring.package=com.cognifide.selfridges.core.modules)(version>=1.2.0.SNAPSHOT))]
+        at org.apache.felix.framework.Felix.resolveBundleRevision(Felix.java:4112)
+        at org.apache.felix.framework.Felix.startBundle(Felix.java:2118)
+        at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1372)
+        at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:308)
+        at java.lang.Thread.run(Unknown Source)
+13.01.2018 14:39:29.439 *ERROR* [FelixStartLevel] ERROR: Bundle '606' Error starting jcrinstall:/apps/selfridges/install/selfridges-app-core-1.2.0-SNAPSHOT.jar (org.osgi.framework.BundleException: Unable to resolve selfridges-app-core [606](R 606.0): missing requirement [selfridges-app-core [606](R 606.0)] osgi.wiring.package; (osgi.wiring.package=com.mashape.unirest.http) Unresolved requirements: [[selfridges-app-core [606](R 606.0)] osgi.wiring.package; (osgi.wiring.package=com.mashape.unirest.http)])
+org.osgi.framework.BundleException: Unable to resolve selfridges-app-core [606](R 606.0): missing requirement [selfridges-app-core [606](R 606.0)] osgi.wiring.package; (osgi.wiring.package=com.mashape.unirest.http) Unresolved requirements: [[selfridges-app-core [606](R 606.0)] osgi.wiring.package; (osgi.wiring.package=com.mashape.unirest.http)]
+        at org.apache.felix.framework.Felix.resolveBundleRevision(Felix.java:4112)
+        at org.apache.felix.framework.Felix.startBundle(Felix.java:2118)
+        at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1372)
+        at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:308)
+        at java.lang.Thread.run(Unknown Source)
+13.01.2018 14:39:29.963 *INFO * [main] Startup completed

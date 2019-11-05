@@ -1,0 +1,172 @@
+diff --git a/aem/selfridges-app/selfridges-app-core/src/main/aem/jcr_root/apps/selfridges/core/components/rootSelector/.content.xml b/aem/selfridges-app/selfridges-app-core/src/main/aem/jcr_root/apps/selfridges/core/components/rootSelector/.content.xml
+new file mode 100644
+index 00000000..82e6d29f
+--- /dev/null
++++ b/aem/selfridges-app/selfridges-app-core/src/main/aem/jcr_root/apps/selfridges/core/components/rootSelector/.content.xml
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<jcr:root xmlns:cog="http://www.cognifide.com/cq5/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
++    xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:zg="http://www.cognifide.com/zen-garden/1.0"
++    cog:additionalCssClassNames="[component]"
++    cog:cssPath="components/rootSelector.css"
++    cog:jsPath="components/rootSelector.js"
++    jcr:mixinTypes="[zg:Component]"
++    cq:isContainer="{Boolean}false"
++    jcr:primaryType="cq:Component"
++    jcr:title="Root Selector"
++    zg:displayHoverbar="{Boolean}true"
++    zg:hoverbarExtensions="[channels]"
++    allowedParents=""
++    componentGroup="Selfridges">
++</jcr:root>
+diff --git a/aem/selfridges-app/selfridges-app-core/src/main/aem/jcr_root/apps/selfridges/core/components/rootSelector/_cq_dialog.xml b/aem/selfridges-app/selfridges-app-core/src/main/aem/jcr_root/apps/selfridges/core/components/rootSelector/_cq_dialog.xml
+new file mode 100644
+index 00000000..24823401
+--- /dev/null
++++ b/aem/selfridges-app/selfridges-app-core/src/main/aem/jcr_root/apps/selfridges/core/components/rootSelector/_cq_dialog.xml
+@@ -0,0 +1,41 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
++          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
++          jcr:primaryType="nt:unstructured"
++          jcr:title="Root Selector"
++          sling:resourceType="cq/gui/components/authoring/dialog">
++    <content
++        jcr:primaryType="nt:unstructured"
++        sling:resourceType="granite/ui/components/foundation/container">
++        <layout
++            jcr:primaryType="nt:unstructured"
++            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
++            type="nav"/>
++        <items jcr:primaryType="nt:unstructured">
++            <filtering
++                jcr:primaryType="nt:unstructured"
++                jcr:title="Filtering"
++                sling:resourceType="granite/ui/components/foundation/container">
++                <layout
++                    jcr:primaryType="nt:unstructured"
++                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
++                <items jcr:primaryType="nt:unstructured">
++                    <column
++                        jcr:primaryType="nt:unstructured"
++                        sling:resourceType="granite/ui/components/foundation/container">
++                        <items jcr:primaryType="nt:unstructured">
++                            <rootNode
++                                jcr:primaryType="nt:unstructured"
++                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
++                                class="visibility-target"
++                                fieldDescription="Root page for children. Default value is parent's page path."
++                                fieldLabel="Root page"
++                                name="./rootNode"
++                                rootPath="/content" />
++                        </items>
++                    </column>
++                </items>
++            </filtering>
++        </items>
++    </content>
++</jcr:root>
+diff --git a/aem/selfridges-app/selfridges-app-core/src/main/aem/jcr_root/apps/selfridges/core/components/rootSelector/_cq_editConfig.xml b/aem/selfridges-app/selfridges-app-core/src/main/aem/jcr_root/apps/selfridges/core/components/rootSelector/_cq_editConfig.xml
+new file mode 100644
+index 00000000..32f247f1
+--- /dev/null
++++ b/aem/selfridges-app/selfridges-app-core/src/main/aem/jcr_root/apps/selfridges/core/components/rootSelector/_cq_editConfig.xml
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
++    cq:dialogMode="floating"
++    cq:disableTargeting="{Boolean}true"
++    jcr:primaryType="cq:EditConfig">
++    <cq:listeners
++        jcr:primaryType="cq:EditListenersConfig"
++        afterdelete="REFRESH_PARENT"
++        aftermove="REFRESH_PAGE"
++        afterinsert="REFRESH_PARENT"/>
++</jcr:root>
+diff --git a/aem/selfridges-app/selfridges-app-core/src/main/aem/jcr_root/apps/selfridges/core/components/rootSelector/_cq_icon.svg b/aem/selfridges-app/selfridges-app-core/src/main/aem/jcr_root/apps/selfridges/core/components/rootSelector/_cq_icon.svg
+new file mode 100644
+index 00000000..38c64980
+--- /dev/null
++++ b/aem/selfridges-app/selfridges-app-core/src/main/aem/jcr_root/apps/selfridges/core/components/rootSelector/_cq_icon.svg
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="utf-8"?>
++<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
++<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
++	 viewBox="0 0 32 28" style="enable-background:new 0 0 32 28;" xml:space="preserve">
++<style type="text/css">
++	.st0{fill:#444444;}
++	.st1{font-family:'MyriadPro-Regular';}
++	.st2{font-size:12px;}
++</style>
++<path class="st0" d="M9,5.2c1,0,1.8-0.8,1.8-1.8V1.8C10.8,0.8,10,0,9,0S7.2,0.8,7.2,1.8v1.8C7.2,4.5,8,5.2,9,5.2z M30,3.5V28H2V3.5
++	h4.4c0,1.4,1.2,2.6,2.6,2.6s2.6-1.2,2.6-2.6h8.8c0,1.4,1.2,2.6,2.6,2.6s2.6-1.2,2.6-2.6H30z M28.2,8.8H3.8v17.5h24.5V8.8z M23,5.2
++	c1,0,1.8-0.8,1.8-1.8V1.8C24.8,0.8,24,0,23,0s-1.8,0.8-1.8,1.8v1.8C21.2,4.5,22,5.2,23,5.2z"/>
++<text transform="matrix(1 0 0 1 4.9123 21.498)" class="st0 st1 st2">1-31</text>
++</svg>
+diff --git a/aem/selfridges-app/selfridges-app-core/src/main/aem/jcr_root/apps/selfridges/core/components/rootSelector/blank.html b/aem/selfridges-app/selfridges-app-core/src/main/aem/jcr_root/apps/selfridges/core/components/rootSelector/blank.html
+new file mode 100644
+index 00000000..06f21b2a
+--- /dev/null
++++ b/aem/selfridges-app/selfridges-app-core/src/main/aem/jcr_root/apps/selfridges/core/components/rootSelector/blank.html
+@@ -0,0 +1,5 @@
++<div class="event-date blank-component">
++  <div class="component-content">
++    26 June - 08 October [event start and end dates are not configured yet]
++  </div>
++</div>
+diff --git a/aem/selfridges-app/selfridges-app-core/src/main/aem/jcr_root/apps/selfridges/core/components/rootSelector/rootSelector.html b/aem/selfridges-app/selfridges-app-core/src/main/aem/jcr_root/apps/selfridges/core/components/rootSelector/rootSelector.html
+new file mode 100644
+index 00000000..857da650
+--- /dev/null
++++ b/aem/selfridges-app/selfridges-app-core/src/main/aem/jcr_root/apps/selfridges/core/components/rootSelector/rootSelector.html
+@@ -0,0 +1,9 @@
++<sly data-sly-use.model="com.cognifide.selfridges.core.components.rootSelector.RootSelectorModel">
++  <div class="component-content">
++    <ul data-sly-list="${model.list}">
++      <li><a href="${item.path}.html">${item.name}</a></li>
++    </ul>
++  </div>
++</sly>
++
++
+diff --git a/aem/selfridges-app/selfridges-app-core/src/main/java/com/cognifide/selfridges/core/components/rootSelector/RootSelectorModel.java b/aem/selfridges-app/selfridges-app-core/src/main/java/com/cognifide/selfridges/core/components/rootSelector/RootSelectorModel.java
+new file mode 100644
+index 00000000..8e26e7ba
+--- /dev/null
++++ b/aem/selfridges-app/selfridges-app-core/src/main/java/com/cognifide/selfridges/core/components/rootSelector/RootSelectorModel.java
+@@ -0,0 +1,35 @@
++package com.cognifide.selfridges.core.components.rootSelector;
++
++import com.cognifide.slice.api.qualifier.Nullable;
++import com.cognifide.slice.mapper.annotation.JcrProperty;
++import com.cognifide.slice.mapper.annotation.SliceResource;
++import org.apache.sling.api.resource.Resource;
++import org.apache.sling.api.resource.ResourceResolver;
++
++import javax.inject.Inject;
++import java.util.LinkedList;
++import java.util.List;
++
++@SliceResource
++public class RootSelectorModel {
++
++  @JcrProperty
++  @Nullable
++  private String rootNode;
++
++  @Inject
++  private ResourceResolver resourceResolver;
++
++  public String getRootNode() {
++    return rootNode;
++  }
++
++  public List<Resource> getList() {
++    List<Resource> result = new LinkedList<>();
++    Resource resource = resourceResolver.getResource(rootNode);
++    for (Resource child : resource.getChildren()) {
++      result.add(child);
++    }
++    return result;
++  }
++}
